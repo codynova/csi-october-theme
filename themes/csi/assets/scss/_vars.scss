@@ -1,0 +1,98 @@
+// Colors
+$color-black: #111;
+$color-grey: #c1c1c1;
+$color-white: #fff;
+$color-purple: #6b26fd;
+$color-confirm: #24c159;
+$color-confirm-hover: #09B543;
+$color-deny: #ff5436;
+$color-deny-hover: #fd4626;
+
+$color-brand: #8851fd;
+$color-darkPurple: #3f227d;
+
+$color-brand-rgb: rgb(136,81,253);
+
+$background-hero-gradient: linear-gradient(to right, rgba(136,81,253,0.99) 3%, rgba(136,81,253,0.9) 8%, rgba(136,81,253,0.8) 20%, rgba(136,81,253,0.6) 60%, rgba(136,81,253,0.7) 75%, rgba(136,81,253,0.8) 85%, rgba(136,81,253,0.9) 97%, rgba(136,81,253,0.99) 100%);
+
+// Fonts
+$font-sans: 'Work Sans';
+//$font-sans: 'PT Sans';
+$font-serif: 'Spectral';
+
+@mixin font-body {
+  font-family: $font-sans;
+  font-size: 22px;
+  font-weight: 400;
+  color: $color-black;
+}
+
+
+
+// Media Queries
+$media-768: 768px;
+$media-960: 960px;
+$media-1144: 1144px;
+$media-1200: 1200px;
+
+$value-maxLarger: 1368px;
+$value-maxSmaller: 1200px;
+
+@mixin media-768-up {
+  @media (min-width: #{$media-768}) {
+    @content;
+  }
+}
+
+@mixin media-768-960 {
+  @media (min-width: #{$media-768}) and (max-width: #{$media-960 - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-960-1200 {
+  @media (min-width: #{$media-960}) and (max-width: #{$media-1200 - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-1200-up {
+  @media (min-width: #{$media-1200}) {
+    @content;
+  }
+}
+
+@mixin media-min-768 {
+  @media (min-width: #{$media-768}) {
+    @content;
+  }
+}
+
+@mixin media-min-960 {
+  @media (min-width: #{$media-960}) {
+    @content;
+  }
+}
+
+@mixin media-min-1144 {
+  @media (min-width: #{$media-1144}) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

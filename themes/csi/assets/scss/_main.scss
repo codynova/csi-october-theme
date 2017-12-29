@@ -1,0 +1,85 @@
+main {
+  width: 100%;
+  max-width: $value-maxLarger;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 300px;
+  background: $color-white;
+  @include media-min-1144 {
+    top: 60px;
+  }
+  section {
+    min-height: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    @include media-min-1144 {
+      width: calc(100% - 168px);
+      max-width: $value-maxSmaller;
+    }
+    figure {
+      width: 42%;
+      position: relative;
+      margin: 2%;
+      @include media-min-768 {
+        width: 26%;
+        margin: 1%;
+      }
+      .loading {
+        opacity: 0;
+      }
+      img {
+        width: 100%;
+      }
+      figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.325s;
+        transition-timing-function: linear;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+        h2 {
+          font-family: $font-serif;
+          font-size: 26px;
+          color: #333;
+          margin-bottom: 0.625rem;
+        }
+        h3 {
+          font-family: $font-sans;
+          font-size: 16px;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.ng-enter {
+  opacity: 0;
+  transition: opacity 500ms linear;
+  transition-delay: 500ms;
+}
+.ng-enter-active {
+  opacity: 1;
+}
+.ng-leave {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+.ng-leave-active {
+  opacity: 0;
+}
