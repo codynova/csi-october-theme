@@ -1,0 +1,11 @@
+plugin:
+    name: 'csi.navigation::lang.plugin.name'
+    description: 'csi.navigation::lang.plugin.description'
+    author: CSI
+    icon: oc-icon-list-ol
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Navigation
+        url: csi/navigation/navigation
+        icon: icon-compass

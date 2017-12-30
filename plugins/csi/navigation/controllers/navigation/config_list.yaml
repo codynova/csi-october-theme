@@ -1,0 +1,12 @@
+list: $/csi/navigation/models/navigation/columns.yaml
+modelClass: CSI\Navigation\Models\Navigation
+title: Navigation
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'csi/navigation/navigation/update/:id'

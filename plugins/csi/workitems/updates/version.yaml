@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table csi_workitems_'
+    - builder_table_create_csi_workitems_.php
+1.0.3:
+    - 'Updated table csi_workitems_'
+    - builder_table_update_csi_workitems_.php
+1.0.4:
+    - 'Updated table csi_workitems_'
+    - builder_table_update_csi_workitems__2.php
+1.0.5:
+    - 'Updated table csi_workitems_'
+    - builder_table_update_csi_workitems__3.php

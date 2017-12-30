@@ -1,0 +1,10 @@
+name: Navigation
+form: $/csi/navigation/models/navigation/fields.yaml
+modelClass: CSI\Navigation\Models\Navigation
+defaultRedirect: csi/navigation/navigation
+create:
+    redirect: 'csi/navigation/navigation/update/:id'
+    redirectClose: csi/navigation/navigation
+update:
+    redirect: csi/navigation/navigation
+    redirectClose: csi/navigation/navigation

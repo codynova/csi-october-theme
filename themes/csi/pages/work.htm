@@ -2,10 +2,12 @@ title = "Work"
 url = "/work.html"
 is_hidden = 0
 ==
-<figure ng-repeat="work in workList | filter: {category: filterQuery} | limitTo: loadIncrement">
-	<img ng-src="{{work.path}}">
-	<figcaption>
-		<h2 ng-bind="work.name"></h2>
-		<h3 ng-bind="work.date"></h3>
-	</figcaption>
+<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: 'order'">
+	<img ng-src="storage/app/media/{[{work.imageurl}]}">
+	<a ng-href="{[{work.pageurl}]}">
+	    <figcaption>
+		    <h2 ng-bind="work.title"></h2>
+		    <h3 ng-bind="work.subtitle"></h3>
+	    </figcaption>
+	</a>
 </figure>

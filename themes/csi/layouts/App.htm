@@ -1,0 +1,38 @@
+==
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<title>CSI</title>
+	
+	
+	<!-- TEMPORARY DEVELOPMENT FONT LINKS -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+	<!-- TEMPORARY DEVELOPMENT FONT LINKS -->
+	
+	
+	<link href="{{ ['assets/scss/styles.scss']|theme }}" rel="stylesheet">
+	<script src="{{ 'assets/vendor/angular.min.js'|theme }}"></script>
+	<script src="{{ 'assets/vendor/angular-route.min.js'|theme }}"></script>
+	<script src="{{ 'assets/vendor/angular-animate.min.js'|theme }}"></script>
+	<script src="{{ 'assets/app.js'|theme }}"></script>
+</head>
+<body ng-app="csiApp" ng-controller="primaryCtrl">
+
+    <header>
+        {% partial 'header' %}
+    </header>
+    
+    <main>
+    	{% page %}
+    </main>
+    
+    <footer>
+    	{% partial 'footer' %}
+    </footer>
+
+</body>
+</html>

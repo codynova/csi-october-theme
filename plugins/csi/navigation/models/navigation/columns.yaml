@@ -1,0 +1,6 @@
+columns:
+    label:
+        label: 'Navigation Label'
+        type: text
+        searchable: true
+        sortable: true

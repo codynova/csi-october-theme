@@ -1,0 +1,11 @@
+plugin:
+    name: 'csi.workitems::lang.plugin.name'
+    description: 'csi.workitems::lang.plugin.description'
+    author: CSI
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Work Items'
+        url: csi/workitems/workitem
+        icon: icon-list-alt

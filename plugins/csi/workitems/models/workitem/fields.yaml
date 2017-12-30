@@ -1,0 +1,39 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    subtitle:
+        label: Subtitle
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: giant
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    pageurl:
+        label: 'Page Url'
+        span: auto
+        placeholder: ''
+        type: text
+        commentAbove: 'This is the page that this work item will link to when clicked'
+    filtertags:
+        label: 'Filter Tags'
+        span: auto
+        type: text
+        commentAbove: 'A comma-separated list of tags for the navigation filter.'
+    order:
+        label: Order
+        span: auto
+        oc.commentPosition: ''
+        type: number
+    imageurl:
+        label: 'Thumbnail Image'
+        oc.commentPosition: ''
+        mode: image
+        span: full
+        type: mediafinder

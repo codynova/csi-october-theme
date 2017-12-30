@@ -1,0 +1,10 @@
+name: WorkItem
+form: $/csi/workitems/models/workitem/fields.yaml
+modelClass: CSI\WorkItems\Models\WorkItem
+defaultRedirect: csi/workitems/workitem
+create:
+    redirect: 'csi/workitems/workitem/update/:id'
+    redirectClose: csi/workitems/workitem
+update:
+    redirect: csi/workitems/workitem
+    redirectClose: csi/workitems/workitem

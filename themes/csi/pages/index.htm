@@ -1,12 +1,11 @@
 title = "Index"
 url = "/"
-layout = "AngularApp"
-description = "Test page"
+layout = "App"
 is_hidden = 0
 ==
 <nav>
 	<ul class="secondary" ng-show="isActiveTab('/')">
-		<li ng-repeat="category in navCategories"><a href="" ng-click="$parent.filterQuery = category.value">{{category.display}}</a></li>
+		<li ng-repeat="category in navCategories | orderBy: 'order'"><a href="" ng-click="$parent.filterQuery = category.matchvalue">{[{category.label}]}</a></li>
 	</ul>
 </nav>
 <section ng-view></section>

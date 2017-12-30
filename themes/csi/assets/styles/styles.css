@@ -667,7 +667,7 @@ main {
 }
 
 main section {
-  min-height: 900px;
+  /*min-height: 900px;*/
   width: 100%;
   margin: 0 auto;
   display: flex;

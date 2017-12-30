@@ -29,7 +29,7 @@ header {
       margin: 0;
       padding: 0;
       background-color: $color-brand;
-      background-image: url('../../images/static-overlay.png');
+      background-image: url('../images/static-overlay.png');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -42,7 +42,7 @@ header {
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: url('../../images/csi_mono_white.svg');
+          background-image: url('../images/csi_mono_white.svg');
           background-position: 17px 19px;
           background-size: 45px 45px;
           background-repeat: no-repeat;
@@ -138,7 +138,7 @@ header {
     position: relative;
     margin: 0 auto;
     padding: 0;
-    background-image: url('../../images/hero-image.jpg');
+    background-image: url('../images/hero-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -161,7 +161,7 @@ header {
       left: 0;
       bottom: 0;
       right: 0;
-      background-image: url('../../images/static-overlay.png'), $background-hero-gradient;
+      background-image: url('../images/static-overlay.png'), $background-hero-gradient;
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -172,7 +172,7 @@ header {
       height: 60px;
       top: 170px;
       left: 25px;
-      background-image: url('../../images/csi_mono_white.svg');
+      background-image: url('../images/csi_mono_white.svg');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
