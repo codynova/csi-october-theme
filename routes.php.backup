@@ -1,0 +1,35 @@
+<?php
+
+//  POSSIBLY GETTING CLOSE WITH THESE TWO:
+
+// Route::get('/work/{id}', function () { 
+//     return Redirect::to('/work/3');    
+// });
+
+// App::missing(function () {
+//     return View::make('index');
+// }
+
+
+
+
+
+
+// Route::get('{all}', function () { 
+//     // return View::make('index.html'); 
+//     return Redirect::to('/index.html');
+// });
+
+// App::missing(
+//     return redirect('/');
+// );
+
+// // index route
+// Route::get('/', function() {
+//     return View::make('index'); // redirect to AngularJS
+// });
+
+// // catch-all -- all routes that are not index or api will be redirected
+// App::missing(function() {
+//     return View::make('index'); // should also redirect to AngularJS
+// }
