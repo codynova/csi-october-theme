@@ -1,0 +1,11 @@
+title = "Gallery"
+url = "/gallery.html"
+is_hidden = 0
+==
+<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" >
+	<img ng-src="storage/app/media/{[{work.imageurl}]}">
+	    <figcaption ng-click="openWorkDetailPage(work)">
+		    <h2 ng-bind="work.title"></h2>
+		    <h3 ng-bind="work.subtitle"></h3>
+	    </figcaption>
+</figure>

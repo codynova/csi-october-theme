@@ -22,6 +22,9 @@ app.config(['$routeProvider', '$locationProvider', '$interpolateProvider',
         $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
         $routeProvider
             .when('/', {
+                templateUrl: 'gallery.html'
+            })
+            .when('/work/:workId', {
                 templateUrl: 'work.html'
             })
             .when('/about', {
@@ -30,21 +33,26 @@ app.config(['$routeProvider', '$locationProvider', '$interpolateProvider',
             .when('/contact', {
                 templateUrl: 'contact.html'
             })
+            .when('/404', {
+                templateUrl: '404.html'
+            })
             .otherwise({
-                redirectTo: function (obj, requestedPath) {
-                    window.location.href = '/404';
-                }
+                redirectTo: '/404'
+                // redirectTo: function (obj, requestedPath) {
+                //     window.location.href = '/404';
+                // }
             });
     }
 ]);
 
-app.service('dataService', ['$http', '$interval', 'WORK_LOAD_VALUES',
-    function ($http, $interval, WORK_LOAD_VALUES) {
+app.service('dataService', [
+    '$http', '$interval', '$location', 'WORK_LOAD_VALUES',
+    function ($http, $interval, $location, WORK_LOAD_VALUES) {
         this.fetchWork = function ($scope) {
             $http({
                 method: 'GET',
                 url: 'api/workitems',
-                cache: false
+                cache: true
             })
             .success(function (response) {
                 $scope.workList = response.map(function(workItem) {
@@ -58,28 +66,28 @@ app.service('dataService', ['$http', '$interval', 'WORK_LOAD_VALUES',
                 }, WORK_LOAD_VALUES.interval);
             })
             .catch(function (err) {
-                console.warn('ERROR retrieving work data', err);
-                window.location.href = '/404';
+                console.warn('ERROR - dataService.fetchWork failed to retrieve WorkItem data from plugin', err);
+                $location.path('/404');
             })
             .finally(function () {
-                console.log('work load done');
+                console.log('WorkItem plugin data loaded');
             });
         };
         this.fetchNav = function ($scope) {
             $http({
                 method: 'GET',
                 url: 'api/navigation',
-                cache: false
+                cache: true
             })
             .success(function (response) {
                 $scope.navCategories = response;
             })
             .catch(function (err) {
-                console.warn('ERROR retrieving nav data', err);
-                window.location.href = '/404';
+                console.warn('ERROR dataService.fetchNav failed to retrieve Navigation data from plugin', err);
+                $location.path('/404');
             })
             .finally(function () {
-                console.log('nav load done');
+                console.log('Navigation plugin data loaded');
             });
         };
     }
@@ -148,26 +156,20 @@ app.service('mobileMenuService', function() {
     }
 });
 
-app.controller('primaryCtrl', ['$scope', '$document', 'dataService', 'scrollService', 'mobileMenuService',
-    function ($scope, $document, dataService, scrollService, mobileMenuService) {
-        $scope.showNavCategories = true;
-        $scope.filterQuery = '';
-        dataService.fetchNav($scope);
-        dataService.fetchWork($scope);
-        // Dynamically load header intro content
-        $document.ready(function () {
-            mobileMenuService.animateHamburger();
-
+app.service('navigationService', [
+    'scrollService',
+    function(scrollService) {
+        this.init = function () {
             var navLink = document.querySelector('.fade-content-work');
             navLink.addEventListener('click', function(e) {
                 if (e.target.classList.contains('active')) {
                     if (window.innerWidth > 960 && window.pageYOffset < 700) {
-                        //smoothly scroll to 700px over 200ms
+                        // Smoothly scroll to 700px over 200ms
                         scrollService.smoothScroll(700, 200, 'easeInCubic');
                     }
                 }
             });
-
+    
             (function() {
                 var tabFadeObjects = [
                     {
@@ -208,7 +210,7 @@ app.controller('primaryCtrl', ['$scope', '$document', 'dataService', 'scrollServ
                             introElement.classList.add(tabFadeObjects[i].posClass);
                             introElement.classList.remove('fade-out');
                         }
-
+    
                         for (var i = 0; i < tabFadeObjects.length; i++) {
                             if (e.target.classList.contains(tabFadeObjects[i].class)) {
                                 var oldTabObject = currentTabObject;
@@ -219,6 +221,39 @@ app.controller('primaryCtrl', ['$scope', '$document', 'dataService', 'scrollServ
                     });
                 });
             })();
+        };
+    }
+]);
+
+app.controller('primaryController', [
+    '$scope', '$document', '$location', '$routeParams', 'dataService', 'scrollService', 'mobileMenuService', 'navigationService',
+    function ($scope, $document, $location, $routeParams, dataService, scrollService, mobileMenuService, navigationService) {
+        
+        // Navigation variables
+        $scope.showNavCategories = true;
+        $scope.filterQuery = '';
+        
+        // JSON data for work and navigation items
+        dataService.fetchNav($scope);
+        dataService.fetchWork($scope);
+        
+        $scope.selectedWork = null;
+        
+        // Function to open work detail view
+        $scope.openWorkDetailPage = function(selectedWorkData) {
+            $scope.selectedWork = selectedWorkData;
+            $location.path('/'+selectedWorkData.pageurl);
+        };
+        
+        $scope.closeWorkDetailPage = function() {
+            $location.path('/');
+            $scope.selectedWork = null;
+        };
+        
+        // Dynamically load header intro content and animations
+        $document.ready(function () {
+            mobileMenuService.animateHamburger();
+            navigationService.init();
         });
     }
 ]);

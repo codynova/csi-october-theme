@@ -2,12 +2,6 @@ title = "Work"
 url = "/work.html"
 is_hidden = 0
 ==
-<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order'">
-	<img ng-src="storage/app/media/{[{work.imageurl}]}">
-	<a ng-href="{[{work.pageurl}]}">
-	    <figcaption>
-		    <h2 ng-bind="work.title"></h2>
-		    <h3 ng-bind="work.subtitle"></h3>
-	    </figcaption>
-	</a>
-</figure>
+Test of the {[{ selectedWork }]} system
+
+<!-- {[{ workList }]} -->
