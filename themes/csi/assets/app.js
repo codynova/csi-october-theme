@@ -252,7 +252,7 @@ app.controller('primaryController', [
         
         // Dynamically load header intro content and animations
         $document.ready(function () {
-            mobileMenuService.animateHamburger();
+            //mobileMenuService.animateHamburger();
             navigationService.init();
         });
     }
