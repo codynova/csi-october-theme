@@ -32,7 +32,7 @@ app.config(['$routeProvider', '$locationProvider', '$interpolateProvider',
             })
             .otherwise({
                 redirectTo: function (obj, requestedPath) {
-                    location.hash = '/404';
+                    window.location.href = '/404';
                 }
             });
     }
@@ -47,8 +47,10 @@ app.service('dataService', ['$http', '$interval', 'WORK_LOAD_VALUES',
                 cache: false
             })
             .success(function (response) {
-                console.log('CP RESPONSE = ', response);
-                $scope.workList = response;
+                $scope.workList = response.map(function(workItem) {
+                    workItem.filters = workItem.filtertags.split(',');
+                    return workItem;
+                });
                 $scope.loadIncrement = WORK_LOAD_VALUES.increment;
                 $interval(function () {
                     $scope.loadIncrement += WORK_LOAD_VALUES.increment;
@@ -57,7 +59,7 @@ app.service('dataService', ['$http', '$interval', 'WORK_LOAD_VALUES',
             })
             .catch(function (err) {
                 console.warn('ERROR retrieving work data', err);
-                location.hash = '/404';
+                window.location.href = '/404';
             })
             .finally(function () {
                 console.log('work load done');
@@ -74,7 +76,7 @@ app.service('dataService', ['$http', '$interval', 'WORK_LOAD_VALUES',
             })
             .catch(function (err) {
                 console.warn('ERROR retrieving nav data', err);
-                location.hash = '/404';
+                window.location.href = '/404';
             })
             .finally(function () {
                 console.log('nav load done');

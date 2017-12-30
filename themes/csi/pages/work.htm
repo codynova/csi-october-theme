@@ -2,7 +2,7 @@ title = "Work"
 url = "/work.html"
 is_hidden = 0
 ==
-<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: 'order'">
+<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order'">
 	<img ng-src="storage/app/media/{[{work.imageurl}]}">
 	<a ng-href="{[{work.pageurl}]}">
 	    <figcaption>
