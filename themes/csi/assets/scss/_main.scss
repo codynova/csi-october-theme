@@ -1,13 +1,10 @@
 main {
   width: 100%;
-  max-width: $value-maxLarger;
+  //max-width: $value-maxLarger;
   position: relative;
   margin: 0 auto;
-  padding-bottom: 300px;
+  padding-bottom: 150px;
   background: $color-white;
-  @include media-min-1144 {
-    top: 60px;
-  }
   section {
     //min-height: 900px;
     width: 100%;
@@ -16,10 +13,10 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    @include media-min-1144 {
+    /* @include media-min-1144 {
       width: calc(100% - 168px);
       max-width: $value-maxSmaller;
-    }
+    } */
     figure {
       width: 42%;
       position: relative;
