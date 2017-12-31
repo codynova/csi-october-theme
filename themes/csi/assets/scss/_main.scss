@@ -1,12 +1,19 @@
 main {
+  min-height: 720px;
   width: 100%;
   //max-width: $value-maxLarger;
-  position: relative;
   margin: 0 auto;
   padding-bottom: 150px;
   background: $color-white;
+  &.position-at-origin section:not(.ng-leave):not(.ng-leave-prepare) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   section {
-    //min-height: 900px;
+    min-height: 720px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -69,6 +76,9 @@ main {
   opacity: 0;
   transition: opacity 500ms linear;
   transition-delay: 500ms;
+}
+.ng-enter-prepare {
+  opacity: 0;  
 }
 .ng-enter-active {
   opacity: 1;

@@ -8,4 +8,4 @@ is_hidden = 0
 		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id"><a href="" ng-click="$parent.filterQuery = category.matchvalue">{[{category.label}]}</a></li>
 	</ul>
 </nav>
-<section ng-view></section>
+<section id="view" ng-view></section>

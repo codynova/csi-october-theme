@@ -53,7 +53,7 @@ header {
         opacity: 0;
         transition: opacity 500ms ease-in;
         &.menu-visible {
-            opacity: 1;
+          opacity: 1;
         }
       }
       /* div.hamburger {
@@ -526,8 +526,8 @@ header {
       @media (min-width: 960px) {
         width: 195px;
         height: 72px;
-        border-top: 1px solid $color-white-faded;
-        border-left: 1px solid $color-white-faded;
+        //border-top: 1px solid $color-white-faded;
+        //border-left: 1px solid $color-white-faded;
       }
       @media (min-width: 1280px) {
         width: 230px;
@@ -579,24 +579,91 @@ header {
           right: 0;
           left: 2px;
           transition: opacity 300ms ease, transform 300ms ease;
-          opacity: 1;
           @media (min-width: 520px) {
             left: 4px;
           }
           @media (min-width: 768px) {
             left: 6px;
           }
-          // TODO: replace this media query with modernizr no-touch detection
-          @media (min-width: 1280px) {
-            opacity: 0;
-          }
         }
-        // TODO: replace this media query with modernizr no-touch detection
+        &:hover:after {
+          transform: translateX(3px);
+        }
+      }
+    }
+    .see-work {
+      display: block;
+      height: 50px;
+      width: 120px;
+      position: absolute;
+      left: 10%;
+      bottom: 10px;
+      text-align: center;
+      cursor: pointer;
+      @media (min-height: 360px) {
+        left: 50%;
+        bottom: 50px;
+        margin-left: -60px;
+      }
+      @media (min-height: 420px) {
+        bottom: 100px;
+      }
+      @media (min-height: 520px) {
+        bottom: 150px;
+      }
+      @media (min-width: 520px) {
+        left: 50%;
+        bottom: 10px;
+        margin-left: -60px;
+      }
+      @media (min-width: 1280px) {
+        width: 150px;
+        margin-left: -75px;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        color: $color-white-faded;
+        font-family: $font-sans;
+        font-size: 13px;
+        font-weight: 600;
+        //text-transform: uppercase;
+        line-height: 50px;
+        transition: all 300ms ease;
+        position: relative;
+        padding: 0.625rem;
+        margin-left: -0.625rem;
+        border: 1px solid $color-white-faded;
+        line-height: 18px;
+        @media (min-width: 420px) {
+          font-size: 14px;
+        }
+        @media (min-width: 520px) {
+          font-size: 15px;
+        }
+        @media (min-width: 620px) {
+          font-size: 16px;
+        }
+        @media (min-width: 768px) {
+          font-size: 17px;
+        }
+        @media (min-width: 960px) {
+          font-size: 18px;
+        }
         @media (min-width: 1280px) {
-          &:hover:after {
-            transform: translateX(6px);
-            opacity: 1;
-          }
+          font-size: 20px;
+        }
+        &:after {
+          content: '\2193';
+          position: absolute;
+          width: 30px;
+          margin-left: -15px;
+          left: 50%;
+          top: 80%;
+          transition: opacity 300ms ease, transform 300ms ease;
+        }
+        &:hover:after {
+          transform: translateY(4px);
         }
       }
     }
