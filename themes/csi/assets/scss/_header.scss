@@ -211,54 +211,21 @@ header {
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      width: 75px;
-      height: 75px;
+      width: 70px;
+      height: 70px;
       top: 60px;
-      left: 20px;      
-      // Queries for top values
-      @media (min-height: 340px) {
-          top: 100px;
-      }
-      @media (min-height: 450px) {
-          top: 125px;
-      }
-      @media (min-height: 560px) {
-          top: 140px;
-      }
-      @media (min-height: 660px) {
-          top: 210px;
-      }
-      @media (min-height: 800px) {
-          top: 270px;
-      }
-      // Queries for size and left values
+      left: 20px;
+      // LOGO media queries for left and size values
       @media (min-width: 420px) {
-        top: 60px;
-        left: 20px;
-        width: 80px;
-        height: 80px;
-          @media (min-height: 340px) {
-            top: 100px;
-          }
-          @media (min-height: 450px) {
-            top: 125px;
-          }
-          @media (min-height: 560px) {
-              top: 140px;
-          }
-          @media (min-height: 660px) {
-              top: 210px;
-          }
-          @media (min-height: 800px) {
-              top: 270px;
-          }
+        width: 75px;
+        height: 75px;
       }
       @media (min-width: 520px) {
         @media (min-height: 340px) {
           width: 90px;
           height: 90px;
         }
-      }
+      }      
       @media (min-width: 620px) {
         left: 25px;
         @media (min-height: 340px) {
@@ -287,6 +254,52 @@ header {
           height: 130px;
         }
       }
+      // LOGO media queries for top values
+      @media (min-height: 340px) {
+        top: 80px;
+        @media (min-width: 520px) {
+          top: 75px;
+        }      
+        @media (min-width: 620px) {
+          top: 90px;
+        }
+      }
+      @media (min-height: 450px) {
+        top: 100px;
+        @media (min-width: 520px) {
+          top: 115px;
+        }      
+        @media (min-width: 620px) {
+          top: 130px;
+        }
+      }
+      @media (min-height: 560px) {
+        top: 140px;
+        @media (min-width: 520px) {
+          top: 155px;
+        }      
+        @media (min-width: 620px) {
+          top: 170px;
+        }
+      }
+      @media (min-height: 660px) {
+        top: 200px;
+        @media (min-width: 520px) {
+          top: 215px;
+        }      
+        @media (min-width: 620px) {
+          top: 230px;
+        }
+      }
+      @media (min-height: 800px) {
+        top: 300px;
+        @media (min-width: 520px) {
+          top: 315px;
+        }      
+        @media (min-width: 620px) {
+          top: 330px;
+        }
+      }
     }
     .intro {
       width: 100%;
@@ -297,7 +310,7 @@ header {
       transition: opacity 400ms ease;
       transition-delay: 100ms;
       opacity: 1;
-      // Left values
+      // INTRO media queries for left values
       @media (min-width: 620px) {
         left: 25px;
       }
@@ -310,68 +323,88 @@ header {
       @media (min-width: 1280px) {
         left: 60px;
       }
-      // Top values
+      // INTRO media queries for top values
       @media (min-height: 340px) {
-        top: 200px;
-        @media (min-width: 420px) {
-          top: 200px;
-        }
+        top: 165px;
         @media (min-width: 520px) {
-          top: 205px;
-        }
+          top: 180px;
+        }      
         @media (min-width: 620px) {
-          top: 220px;
+          top: 210px;
         }
       }
       @media (min-height: 450px) {
-        top: 235px;
-        @media (min-width: 420px) {
-          top: 235px;
-        }
+        top: 205px;
         @media (min-width: 520px) {
+          top: 220px;
+        }      
+        @media (min-width: 620px) {
           top: 250px;
         }
-        @media (min-width: 620px) {
+        @media (min-width: 768px) {
           top: 265px;
+        }
+        @media (min-width: 960px) {
+          top: 280px;
+        }
+        @media (min-width: 1280px) {
+          top: 295px;
         }
       }
       @media (min-height: 560px) {
-        top: 270px;
-        @media (min-width: 420px) {
-          top: 270px;
-        }
+        top: 245px;
         @media (min-width: 520px) {
-          top: 285px;
-        }
+          top: 260px;
+        }      
         @media (min-width: 620px) {
-          top: 300px;
+          top: 290px;
+        }
+        @media (min-width: 768px) {
+          top: 305px;
+        }
+        @media (min-width: 960px) {
+          top: 320px;
+        }
+        @media (min-width: 1280px) {
+          top: 335px;
         }
       }
       @media (min-height: 660px) {
-        top: 310px;
-        @media (min-width: 420px) {
-          top: 310px;
-        }
+        top: 305px;
         @media (min-width: 520px) {
-          top: 325px;
-        }
+          top: 320px;
+        }      
         @media (min-width: 620px) {
-          top: 340px;
+          top: 350px;
+        }
+        @media (min-width: 768px) {
+          top: 365px;
+        }
+        @media (min-width: 960px) {
+          top: 380px;
+        }
+        @media (min-width: 1280px) {
+          top: 395px;
         }
       }
       @media (min-height: 800px) {
-        top: 360px;
-        @media (min-width: 420px) {
-          top: 360px;
-        }
+        top: 405px;
         @media (min-width: 520px) {
-          top: 375px;
-        }
+          top: 420px;
+        }      
         @media (min-width: 620px) {
-          top: 390px;
+          top: 450px;
         }
-      }
-
+        @media (min-width: 768px) {
+          top: 465px;
+        }
+        @media (min-width: 960px) {
+          top: 480px;
+        }
+        @media (min-width: 1280px) {
+          top: 495px;
+        }
+      }       
      /* &.intro-about, &.intro-contact {
         top: 130px;
         left: 40px;
@@ -390,10 +423,10 @@ header {
         @include media-min-960 {
           top: 90px;
         }
-      } */
+      }
       &.fade-out {
         opacity: 0;
-      }
+      } */
       h2 {
         color: $color-white;
         font-family: $font-sans;
