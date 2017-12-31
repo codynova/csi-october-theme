@@ -175,7 +175,7 @@ app.service('navigationService', [
                     {
                         class: 'fade-content-work',
                         posClass: 'intro-basic',
-                        html: "<h2>When you're ready for <br><span>a different breed of event.</span></h2>"
+                        html: "<h2>When you're ready for <br><span class='purple'>a different breed of event.</span></h2>"
                     },
                     {
                         class: 'fade-content-about',
