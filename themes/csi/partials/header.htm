@@ -16,7 +16,7 @@
     <ul>
         <li>
             <!--<a href="/" class="fade-content fade-content-work" ng-class="{'active': isActiveTab('/')}">Our Work</a>-->
-            <a href="#view" class="scroll-to-work">Our Work</a>
+            <a href="#" ng-click="scrollToWork();">Our Work</a>
         </li>
         <li>
             <a href="/about" ng-class="{active: isActiveTab('/about')}">About Us</a>
@@ -28,17 +28,4 @@
 </nav>
 <section class="sixteen-nine" ng-class="{'sixteen-four hero-about': isActiveTab('/about'), 'sixteen-four hero-contact': isActiveTab('/contact')}">
     <div class="hero-image"></div>
-    <div class="content">
-        <span class="logo"></span>
-        <div class="intro">
-            <h2>When you're ready for <br><span class="purple">a different breed of event.</span></h2>
-            <!--<p>Center Stage Industries is a full service event production company based in Seattle. We collaborate with teams from around the world to offer top notch concert, festival, and corporate event production services.</p>-->
-        </div>
-        <div class="see-work scroll-to-work">
-            <span><a href="#view">See our work</a></span>
-        </div>
-        <div class="cta">
-            <span><a href="#/contact" class="fade-content fade-content-contact">Get in touch</a></span>
-        </div>
-    </div>
 </section>

@@ -1,35 +1,75 @@
+nav.tertiary {
+  position: relative;
+  width: 100px;
+  top: 70px;
+  ul {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    opacity: 1;
+    line-height: 56px;
+    text-align: center;
+    background-color: $color-brand;
+    li {
+      width: auto;
+      font-family: $font-sans;
+      font-size: 13px;
+      color: $color-white;
+      transition: text-shadow 200ms ease-in, border 200ms linear;
+      text-transform: uppercase;
+      cursor: pointer;
+      &.active {
+        font-weight: 600;
+        background-color: $color-darkPurple3;
+      }
+      &:hover {
+        background-color: $color-darkPurple4;
+      }
+      h3 {
+        background-color: $color-darkPurple2;
+        text-transform: none;
+        cursor: default;
+      }
+    }
+    &.ng-hide {
+      opacity: 0;
+    }
+    &.ng-hide-add, &.ng-hide-remove {
+      transition: opacity 400ms linear;
+      transition-delay: 100ms;
+    }
+  }
+}
+
 main {
-  min-height: 720px;
-  width: 100%;
-  //max-width: $value-maxLarger;
+  width: calc(100% - 40px);
   margin: 0 auto;
-  padding-bottom: 150px;
+  padding: 0 20px;
   background: $color-white;
-  &.position-at-origin section:not(.ng-leave):not(.ng-leave-prepare) {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  display: flex;
+  @media (min-width: 768px) {
+    width: calc(100% - 90px);
+    padding: 0 45px;
   }
   section {
     min-height: 720px;
-    width: 100%;
+    width: calc(100% - 100px);
+    position: relative;
+    top: 70px;
+    left: 20px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    /* @include media-min-1144 {
-      width: calc(100% - 168px);
-      max-width: $value-maxSmaller;
-    } */
     figure {
       width: 42%;
       position: relative;
       margin: 2%;
       @include media-min-768 {
-        width: 26%;
+        width: 29%;
         margin: 1%;
       }
       .loading {

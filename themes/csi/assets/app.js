@@ -95,28 +95,35 @@ app.service('dataService', [
     }
 ]);
 
-app.service('scrollService', function() {
-    this.init = function () {
-        var scrollService = this;
-        var workLinks = document.querySelectorAll('.scroll-to-work');
-        Array.prototype.map.call(workLinks, function (linkElement) {
-            linkElement.addEventListener('click', function (e) {
-                e.preventDefault();
-                scrollService.scrollToWork();
-            });
-        });    
-    },
-    this.scrollToWork = function () {
-        var topScrollPos = document.documentElement.scrollTop;
-        var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        var scrollValue = viewportHeight - topScrollPos;
-        window.scrollBy({ 
-          top: scrollValue,
-          left: 0, 
-          behavior: 'smooth' 
-        });        
+app.service('scrollService', [
+    '$location', '$timeout',
+    function($location, $timeout) {
+        this.scrollToWork = function ($scope) {
+            var scroll = function() {
+                var topScrollPos = document.documentElement.scrollTop;
+                var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                var scrollValue = viewportHeight - topScrollPos;
+                window.scrollBy({ 
+                    top: scrollValue,
+                    left: 0, 
+                    behavior: 'smooth' 
+                });    
+            }
+            if ($location.path() === '/') {
+                scroll();
+            } else {
+                $location.path('/');
+                var eventScrollFn = $scope.$on('$routeChangeSuccess', function($event, next, current) { 
+                    $timeout(function() {
+                        scroll();
+                    }, 700 );
+                    eventScrollFn();
+                });
+            }
+
+        }
     }
-});
+]);
 
 app.service('mobileMenuService', function() {
     this.animateHamburger = function () {
@@ -131,18 +138,9 @@ app.service('mobileMenuService', function() {
     }
 });
 
-app.service('navigationService', [
-    'scrollService',
-    function(scrollService) {
-        this.init = function () {
-
-        };
-    }
-]);
-
 app.controller('primaryController', [
-    '$scope', '$document', '$location', '$routeParams', 'dataService', 'scrollService', 'mobileMenuService', 'navigationService',
-    function ($scope, $document, $location, $routeParams, dataService, scrollService, mobileMenuService, navigationService) {
+    '$scope', '$document', '$location', '$routeParams', 'dataService', 'scrollService',
+    function ($scope, $document, $location, $routeParams, dataService, scrollService) {
         
         // Navigation variables
         $scope.showNavCategories = true;
@@ -165,11 +163,13 @@ app.controller('primaryController', [
             $scope.selectedWork = null;
         };
         
+        $scope.scrollToWork = function() {
+            scrollService.scrollToWork($scope);
+        };
+        
         // Dynamically load header intro content and animations
-        $document.ready(function () {
-            //mobileMenuService.animateHamburger();
-            navigationService.init();
-            scrollService.init();
-        });
+        // $document.ready(function () {
+        //     mobileMenuService.animateHamburger();
+        // });
     }
 ]);

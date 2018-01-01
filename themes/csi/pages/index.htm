@@ -3,9 +3,4 @@ url = "/"
 layout = "App"
 is_hidden = 0
 ==
-<nav class="tertiary">
-	<ul ng-show="isActiveTab('/')">
-		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id"><a href="" ng-click="$parent.filterQuery = category.matchvalue">{[{category.label}]}</a></li>
-	</ul>
-</nav>
-<section id="view" ng-view></section>
+<main ng-view></main>

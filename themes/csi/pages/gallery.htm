@@ -2,10 +2,33 @@ title = "Gallery"
 url = "/gallery.html"
 is_hidden = 0
 ==
-<figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" >
-	<img ng-src="storage/app/media/{[{work.imageurl}]}">
-	    <figcaption ng-click="openWorkDetailPage(work)">
-		    <h2 ng-bind="work.title"></h2>
-		    <h3 ng-bind="work.subtitle"></h3>
-	    </figcaption>
-</figure>
+<div class="content">
+    <span class="logo"></span>
+    <div class="intro">
+        <h2>When you're ready for <br><span class="purple">a different breed of event.</span></h2>
+        <!--<p>Center Stage Industries is a full service event production company based in Seattle. We collaborate with teams from around the world to offer top notch concert, festival, and corporate event production services.</p>-->
+    </div>
+    <div class="see-work">
+        <span><a href="#" ng-click="scrollToWork();">See our work</a></span>
+    </div>
+    <div class="cta">
+        <span><a href="/contact" class="fade-content fade-content-contact">Get in touch</a></span>
+    </div>
+</div>
+
+<nav class="tertiary">
+	<ul>
+	    <li><h3>Filter</h3></li>
+		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id" ng-click="$parent.filterQuery = category.matchvalue" ng-class="{active: category.matchvalue === $parent.filterQuery}"><a href="">{[{category.label}]}</a></li>
+	</ul>
+</nav>
+
+<section>
+    <figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" >
+    	<img ng-src="storage/app/media/{[{work.imageurl}]}">
+    	    <figcaption ng-click="openWorkDetailPage(work)">
+    		    <h2 ng-bind="work.title"></h2>
+    		    <h3 ng-bind="work.subtitle"></h3>
+    	    </figcaption>
+    </figure>
+</section>
