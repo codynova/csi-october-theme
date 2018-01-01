@@ -2,7 +2,8 @@
 $color-black: #111;
 $color-grey: #c1c1c1;
 $color-white: #fff;
-$color-white-faded: rgba(255, 255, 255, 0.85);
+$color-faded-white: rgba(255, 255, 255, 0.85);
+$color-faux-white: #fafafa;
 $color-purple: #6b26fd;
 $color-confirm: #24c159;
 $color-confirm-hover: #09B543;
@@ -10,10 +11,10 @@ $color-deny: #ff5436;
 $color-deny-hover: #fd4626;
 
 $color-brand: #8851fd;
-$color-darkPurple: rgba(63, 34, 125, 1);
-$color-darkPurple2: rgba(63, 34, 125, 0.8);
-$color-darkPurple3: rgba(63, 34, 125, 0.5);
-$color-darkPurple4: rgba(63, 34, 125, 0.2);
+$color-dark-purple: rgba(63, 34, 125, 1);
+$color-dark-purple2: rgba(63, 34, 125, 0.8);
+$color-dark-purple3: rgba(63, 34, 125, 0.5);
+$color-dark-purple4: rgba(63, 34, 125, 0.2);
 
 $color-brand-rgb: rgb(136,81,253);
 

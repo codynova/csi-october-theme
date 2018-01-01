@@ -22,13 +22,13 @@ nav.tertiary {
       cursor: pointer;
       &.active {
         font-weight: 600;
-        background-color: $color-darkPurple3;
+        background-color: $color-dark-purple3;
       }
       &:hover {
-        background-color: $color-darkPurple4;
+        background-color: $color-dark-purple4;
       }
       h3 {
-        background-color: $color-darkPurple2;
+        background-color: $color-dark-purple2;
         text-transform: none;
         cursor: default;
       }
@@ -47,7 +47,7 @@ main {
   width: calc(100% - 40px);
   margin: 0 auto;
   padding: 0 20px;
-  background: $color-white;
+  background: $color-faux-white;
   display: flex;
   @media (min-width: 768px) {
     width: calc(100% - 90px);
@@ -114,8 +114,8 @@ main {
 
 .ng-enter {
   opacity: 0;
-  transition: opacity 500ms linear;
-  transition-delay: 500ms;
+  transition: opacity 600ms ease;
+  transition-delay: 600ms;
 }
 .ng-enter-prepare {
   opacity: 0;  
@@ -125,7 +125,7 @@ main {
 }
 .ng-leave {
   opacity: 1;
-  transition: opacity 500ms linear;
+  transition: opacity 600ms ease;
 }
 .ng-leave-active {
   opacity: 0;

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('csiApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('csiApp', ['ngRoute', 'ngAnimate', 'ngSanitize']);
 
 app.constant('WORK_LOAD_VALUES', { increment: 3, interval: 1000 });
 
@@ -98,7 +98,7 @@ app.service('dataService', [
 app.service('scrollService', [
     '$location', '$timeout',
     function($location, $timeout) {
-        this.scrollToWork = function ($scope) {
+        this.scrollToWork = function($scope) {
             var scroll = function() {
                 var topScrollPos = document.documentElement.scrollTop;
                 var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -121,6 +121,13 @@ app.service('scrollService', [
                 });
             }
 
+        },
+        this.scrollToTop = function() {
+            window.scrollTo({ 
+                top: 0,
+                left: 0, 
+                behavior: 'smooth' 
+            });
         }
     }
 ]);
@@ -156,6 +163,7 @@ app.controller('primaryController', [
         $scope.openWorkDetailPage = function(selectedWorkData) {
             $scope.selectedWork = selectedWorkData;
             $location.path('/'+selectedWorkData.pageurl);
+            scrollService.scrollToTop();
         };
         
         $scope.closeWorkDetailPage = function() {

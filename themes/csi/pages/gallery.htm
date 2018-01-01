@@ -19,7 +19,7 @@ is_hidden = 0
 <nav class="tertiary">
 	<ul>
 	    <li><h3>Filter</h3></li>
-		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id" ng-click="$parent.filterQuery = category.matchvalue" ng-class="{active: category.matchvalue === $parent.filterQuery}"><a href="">{[{category.label}]}</a></li>
+		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id" ng-click="$parent.filterQuery = category.matchvalue" ng-class="{active: category.matchvalue === $parent.filterQuery}"><a href="#">{[{category.label}]}</a></li>
 	</ul>
 </nav>
 

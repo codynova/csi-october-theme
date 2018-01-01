@@ -259,7 +259,7 @@
           }
         }
         span.purple {
-          color: $color-darkPurple;
+          color: $color-dark-purple;
           font-style: italic;
           font-size: 26px;
           padding-right: 30px;
@@ -335,7 +335,7 @@
       a {
         display: inline-block;
         width: 100%;
-        color: $color-white-faded;
+        color: $color-faded-white;
         font-family: $font-sans;
         font-size: 13px;
         font-weight: 600;
@@ -422,7 +422,7 @@
       a {
         display: inline-block;
         width: 100%;
-        color: $color-white-faded;
+        color: $color-faded-white;
         font-family: $font-sans;
         font-size: 13px;
         font-weight: 600;
@@ -432,7 +432,7 @@
         position: relative;
         padding: 0.625rem;
         margin-left: -0.625rem;
-        border: 1px solid $color-white-faded;
+        border: 1px solid $color-faded-white;
         line-height: 18px;
         @media (min-width: 420px) {
           font-size: 14px;

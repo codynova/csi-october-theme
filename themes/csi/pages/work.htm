@@ -2,6 +2,13 @@ title = "Work"
 url = "/work.html"
 is_hidden = 0
 ==
-Test of the {[{ selectedWork }]} system
+<div class="content work-detail">
+    <header style="background-image: url('storage/app/media/{[{selectedWork.imageurl}]}');">
+        <h3>{[{selectedWork.title}]}</h3>
+        <h4>{[{selectedWork.subtitle}]}</h4>
+    </header>
+    <p ng-bind-html="selectedWork.description"></p>
 
+
+</div>
 <!-- {[{ workList }]} -->
