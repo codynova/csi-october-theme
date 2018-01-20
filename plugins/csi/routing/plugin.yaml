@@ -1,0 +1,6 @@
+plugin:
+    name: 'csi.routing::lang.plugin.name'
+    description: 'csi.routing::lang.plugin.description'
+    author: CSI
+    icon: oc-icon-arrow-circle-o-right
+    homepage: ''
