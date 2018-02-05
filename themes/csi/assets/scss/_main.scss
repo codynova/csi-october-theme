@@ -129,10 +129,6 @@ figure {
   margin-bottom: 45px;
   @include box-shadow;
   cursor: pointer;
-  // @media (min-width: 1280px) {
-  //   width: 42%;
-  //   margin: 2%;
-  // }
   @media (min-width: 768px) {
     margin-bottom: 50px;
   }
@@ -151,7 +147,7 @@ figure {
   }
 }
 
-.figure-image {
+img.figure-image {
   width: 100%;
   display: block;
   margin: 0 auto;
@@ -160,7 +156,7 @@ figure {
   }
 }
 
-.figure-caption {
+figcaption.figure-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,14 +172,11 @@ figure {
     font-size: 34px;
     padding: 30px;
   }
-  &:hover {
-    cursor: pointer;
-  }
-  h2 {
+  h2.figure-title {
     font-family: $font-serif;
     font-size: 22px;
     font-weight: 700;
-    color: #333;
+    color: $color-faux-black;
     margin-bottom: 0.325rem;
     @media (min-width: 450px) {
       font-size: 26px;
@@ -202,10 +195,10 @@ figure {
       font-size: 34px;
     }
   }
-  h3 {
+  h3.figure-subtitle {
     font-family: $font-sans;
     font-size: 14px;
-    color: #333;
+    color: $color-faux-black;
     @media (min-width: 450px) {
       font-size: 16px;
     }
@@ -220,6 +213,21 @@ figure {
     }
     @media (min-width: 1440px) {
       font-size: 24px;
+    }
+  }
+}
+
+.content {
+  @media (min-width: 960px) {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    bottom: 20px;
+    &.work-detail {
+      bottom: 50px;
+    }
+    &.contact-page, &.about-page {
+      bottom: 0;
     }
   }
 }

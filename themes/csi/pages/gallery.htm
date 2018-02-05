@@ -24,9 +24,9 @@ is_hidden = 0
 </nav>
 
 <section>
-    <figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" >
+    <figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" ng-click="openWorkDetailPage(work)">
     	<img class="figure-image" ng-src="storage/app/media/{[{work.imageurl}]}">
-        <figcaption class="figure-caption" ng-click="openWorkDetailPage(work)">
+        <figcaption class="figure-caption">
             <h2 class="figure-title" ng-bind="work.title"></h2>
             <h3 class="figure-subtitle" ng-bind="work.subtitle"></h3>
         </figcaption>

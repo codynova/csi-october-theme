@@ -8,21 +8,51 @@
     background-position: center center;
     background-repeat: no-repeat;
     margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     h3 {
-      position: absolute;
-      top: 25px;
-      left: 20px;
       color: $color-white;
-      font-family: $font-sans;
-      font-size: 36px;
+      font-family: $font-serif;
+      font-size: 32px;
       letter-spacing: -3px;
+      font-weight: 700;
+      @media (min-width: 450px) {
+        font-size: 36px;
+      }
+      @media (min-width: 768px) {
+        font-size: 40px;
+      }
+      @media (min-width: 960px) {
+        font-size: 43px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 46px;
+      }
+      @media (min-width: 1440px) {
+        font-size: 56px;
+      }
     }
     h4 {
       position: absolute;
       bottom: 10px;
-      right: 10px;
+      right: 15px;
       color: $color-white;
-      font-family: $font-sans;
+      font-family: $font-serif;
+      font-size: 16px;
+      @media (min-width: 450px) {
+        font-size: 18px;
+      }
+      @media (min-width: 768px) {
+        font-size: 20px;
+        right: 20px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 22px;
+      }
+      @media (min-width: 1440px) {
+        font-size: 24px;
+      }
     }
   }
   p {
@@ -32,7 +62,7 @@
       margin: 0 auto 2.5rem auto;
       padding: 0 5%;
       text-align: justify;
-      font-family: $font-serif;
+      font-family: $font-sans;
       font-size: 18px;
       line-height: 26px;
     }
