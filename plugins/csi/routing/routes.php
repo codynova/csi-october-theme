@@ -7,3 +7,7 @@ Route::get('/about', function() {
 Route::get('/contact', function() {
     return redirect('/');
 });
+
+Route::get('/work/{value}', function($value) {
+    return redirect('/');
+});
