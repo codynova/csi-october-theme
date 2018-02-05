@@ -7,18 +7,16 @@
       margin: 0 auto;
       input, textarea {
         margin: 0.725rem auto;
+        background: $color-faux-white;
         padding: 0.5rem;
-        border: 1px solid $color-grey;
-        border-radius: 5px;
+        border: none;
         float: left;
         clear: both;
         box-sizing: border-box;
         transition: color 300ms ease, border 300ms linear;
         font-family: $font-serif;
         font-size: 18px;
-        &:hover, &:focus {
-          border: 1px solid $color-brand;
-        }
+        @include box-shadow;
       }
       input[name=username], input[name=useremail], input[name=userphone] {
         width: 80%;

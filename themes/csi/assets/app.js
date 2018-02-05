@@ -98,16 +98,21 @@ app.service('dataService', [
 app.service('scrollService', [
     '$location', '$timeout',
     function($location, $timeout) {
+        var smoothScrollSupport = 'scrollBehavior' in document.documentElement.style;
         this.scrollToWork = function($scope) {
             var scroll = function() {
                 var topScrollPos = document.documentElement.scrollTop;
                 var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
                 var scrollValue = viewportHeight - topScrollPos;
-                window.scrollBy({ 
-                    top: scrollValue,
-                    left: 0, 
-                    behavior: 'smooth' 
-                });    
+                if (smoothScrollSupport) {
+                    window.scrollBy({ 
+                        top: scrollValue,
+                        left: 0, 
+                        behavior: 'smooth' 
+                    });
+                } else {
+                    window.scrollBy(0, scrollValue);
+                }
             }
             if ($location.path() === '/') {
                 scroll();
@@ -123,11 +128,15 @@ app.service('scrollService', [
 
         },
         this.scrollToTop = function() {
-            window.scrollTo({ 
-                top: 0,
-                left: 0, 
-                behavior: 'smooth' 
-            });
+            if (smoothScrollSupport) {
+                window.scrollTo({ 
+                    top: 0,
+                    left: 0, 
+                    behavior: 'smooth' 
+                });
+            } else {
+                window.scrollTo(0, 0);
+            }
         }
     }
 ]);
@@ -172,6 +181,7 @@ app.controller('primaryController', [
         };
         
         $scope.scrollToWork = function() {
+            console.log('TESTING EDGE!!!');
             scrollService.scrollToWork($scope);
         };
         

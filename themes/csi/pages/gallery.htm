@@ -16,7 +16,7 @@ is_hidden = 0
     </div>
 </div>
 
-<nav class="tertiary">
+<nav class="filter">
 	<ul>
 	    <li><h3>Filter</h3></li>
 		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id" ng-click="$parent.filterQuery = category.matchvalue" ng-class="{active: category.matchvalue === $parent.filterQuery}"><a href="#">{[{category.label}]}</a></li>
@@ -25,10 +25,10 @@ is_hidden = 0
 
 <section>
     <figure ng-repeat="work in workList | filter: {filtertags: filterQuery} | limitTo: loadIncrement | orderBy: '-order' track by work.id" >
-    	<img ng-src="storage/app/media/{[{work.imageurl}]}">
-    	    <figcaption ng-click="openWorkDetailPage(work)">
-    		    <h2 ng-bind="work.title"></h2>
-    		    <h3 ng-bind="work.subtitle"></h3>
-    	    </figcaption>
+    	<img class="figure-image" ng-src="storage/app/media/{[{work.imageurl}]}">
+        <figcaption class="figure-caption" ng-click="openWorkDetailPage(work)">
+            <h2 class="figure-title" ng-bind="work.title"></h2>
+            <h3 class="figure-subtitle" ng-bind="work.subtitle"></h3>
+        </figcaption>
     </figure>
 </section>

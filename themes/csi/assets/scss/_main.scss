@@ -1,17 +1,36 @@
-nav.tertiary {
+nav.filter {
   position: relative;
-  width: 100px;
-  top: 70px;
+  top: 40px;
+  width: 100%;
+  @media (min-width: 960px) {
+    top: 70px;
+    width: 15%;
+    min-width: 100px;
+    float: left;
+    max-width: 315px;
+  }
   ul {
     display: flex;
     margin: 0 auto;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
     opacity: 1;
     line-height: 56px;
     text-align: center;
     background-color: $color-brand;
+    @media (min-width: 960px) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      top: 70px;
+      width: 100%;
+      min-width: 100px;
+      line-height: 66px;
+    }
+    @media (min-width: 1280px) {
+      line-height: 76px;
+    }
+    @media (min-width: 1440px) {
+      line-height: 86px;
+    }
     li {
       width: auto;
       font-family: $font-sans;
@@ -20,6 +39,16 @@ nav.tertiary {
       transition: text-shadow 200ms ease-in, border 200ms linear;
       text-transform: uppercase;
       cursor: pointer;
+      flex-grow: 1;
+      @media (min-width: 960px) {
+        font-size: 14px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 16px;
+      }
+      @media (min-width: 1440px) {
+        font-size: 18px;
+      }
       &.active {
         font-weight: 600;
         background-color: $color-dark-purple3;
@@ -31,6 +60,16 @@ nav.tertiary {
         background-color: $color-dark-purple2;
         text-transform: none;
         cursor: default;
+        font-size: 16px;
+        @media (min-width: 960px) {
+          font-size: 18px;
+        }
+        @media (min-width: 1280px) {
+          font-size: 20px;
+        }
+        @media (min-width: 1440px) {
+          font-size: 22px;
+        }
       }
     }
     &.ng-hide {
@@ -48,66 +87,139 @@ main {
   margin: 0 auto;
   padding: 0 20px;
   background: $color-faux-white;
-  display: flex;
   @media (min-width: 768px) {
     width: calc(100% - 90px);
     padding: 0 45px;
   }
+  @media (min-width: 960px) {
+    flex-wrap: nowrap;
+    width: calc(100% - 120px);
+    padding: 0 60px;
+  }
+  @media (min-width: 1280px) {
+    width: calc(100% - 150px);
+    padding: 0 75px;
+  }
+  @media (min-width: 1440px) {
+    width: calc(100% - 180px);
+    padding: 0 90px;
+    max-width: 1600px;
+  }
   section {
-    min-height: 720px;
-    width: calc(100% - 100px);
     position: relative;
-    top: 70px;
-    left: 20px;
-    margin: 0 auto;
+    top: 90px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-content: flex-start;
-    figure {
-      width: 42%;
-      position: relative;
-      margin: 2%;
-      @include media-min-768 {
-        width: 29%;
-        margin: 1%;
-      }
-      .loading {
-        opacity: 0;
-      }
-      img {
-        width: 100%;
-      }
-      figcaption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.7);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.325s;
-        transition-timing-function: linear;
-        &:hover {
-          opacity: 1;
-          cursor: pointer;
-        }
-        h2 {
-          font-family: $font-serif;
-          font-size: 26px;
-          color: #333;
-          margin-bottom: 0.625rem;
-        }
-        h3 {
-          font-family: $font-sans;
-          font-size: 16px;
-          color: #333;
-        }
-      }
+    align-items: center;
+    @media (min-width: 960px) {
+      width: 85%;
+      max-width: calc(100% - 100px);
+      min-height: 720px;
+    }
+  }
+}
+
+figure {
+  width: 80%;
+  margin: 0 10%;
+  position: relative;
+  margin-bottom: 45px;
+  @include box-shadow;
+  cursor: pointer;
+  // @media (min-width: 1280px) {
+  //   width: 42%;
+  //   margin: 2%;
+  // }
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+  @media (min-width: 960px) {
+    margin-bottom: 60px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 960px;
+    margin-bottom: 75px;
+  }
+  @media (min-width: 1440px) {
+    margin-bottom: 90px;
+  }
+  .loading {
+    opacity: 0;
+  }
+}
+
+.figure-image {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  @media (min-width: 1280px) {
+    max-width: 960px;
+  }
+}
+
+.figure-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.325s;
+  transition-timing-function: linear;
+  margin: 0 auto;
+  padding: 20px;
+  @media (min-width: 1280px) {
+    max-width: 960px;
+    padding: 25px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 34px;
+    padding: 30px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  h2 {
+    font-family: $font-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.325rem;
+    @media (min-width: 450px) {
+      font-size: 26px;
+    }
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+    @media (min-width: 960px) {
+      font-size: 30px;
+      margin-bottom: 0.625rem;
+    }
+    @media (min-width: 1280px) {
+      font-size: 32px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 34px;
+    }
+  }
+  h3 {
+    font-family: $font-sans;
+    font-size: 14px;
+    color: #333;
+    @media (min-width: 450px) {
+      font-size: 16px;
+    }
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+    @media (min-width: 960px) {
+      font-size: 20px;
+    }
+    @media (min-width: 1280px) {
+      font-size: 22px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 24px;
     }
   }
 }

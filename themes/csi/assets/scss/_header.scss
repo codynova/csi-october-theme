@@ -33,6 +33,10 @@ header {
         background-size: 72px 72px;
         background-repeat: no-repeat;
         transition: all 500ms ease-in;
+        @media (min-width: 768px) {
+          background-position: center center;
+          background-size: 80%;
+        }
         &.logo-shrink {
             background-position: 12px 9px;
             background-size: 62px 62px;
