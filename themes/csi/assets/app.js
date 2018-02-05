@@ -106,9 +106,9 @@ app.service('scrollService', [
                 var scrollValue = viewportHeight - topScrollPos;
                 if (smoothScrollSupport) {
                     window.scrollBy({ 
+                        left: 0,
                         top: scrollValue,
-                        left: 0, 
-                        behavior: 'smooth' 
+                        behavior: 'smooth'
                     });
                 } else {
                     window.scrollBy(0, scrollValue);
@@ -129,10 +129,10 @@ app.service('scrollService', [
         },
         this.scrollToTop = function() {
             if (smoothScrollSupport) {
-                window.scrollTo({ 
-                    top: 0,
+                window.scrollTo({
                     left: 0, 
-                    behavior: 'smooth' 
+                    top: 0,
+                    behavior: 'smooth'
                 });
             } else {
                 window.scrollTo(0, 0);
@@ -171,8 +171,8 @@ app.controller('primaryController', [
         // Function to open work detail view
         $scope.openWorkDetailPage = function(selectedWorkData) {
             $scope.selectedWork = selectedWorkData;
-            $location.path('/'+selectedWorkData.pageurl);
             scrollService.scrollToTop();
+            $location.path('/'+selectedWorkData.pageurl);
         };
         
         $scope.closeWorkDetailPage = function() {
@@ -181,10 +181,19 @@ app.controller('primaryController', [
         };
         
         $scope.scrollToWork = function() {
-            console.log('TESTING EDGE!!!');
             scrollService.scrollToWork($scope);
         };
+
+        $scope.openAboutPage = function() {
+            scrollService.scrollToTop();
+            $location.path('/about');
+        };
         
+        $scope.openContactPage = function() {
+            scrollService.scrollToTop();
+            $location.path('/contact');
+        };
+
         // Dynamically load header intro content and animations
         // $document.ready(function () {
         //     mobileMenuService.animateHamburger();

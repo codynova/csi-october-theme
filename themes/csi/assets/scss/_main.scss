@@ -219,14 +219,17 @@ figcaption.figure-caption {
 
 .content {
   @media (min-width: 960px) {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
     bottom: 20px;
     &.work-detail {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
       bottom: 50px;
     }
     &.contact-page, &.about-page {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
       bottom: 0;
     }
   }
