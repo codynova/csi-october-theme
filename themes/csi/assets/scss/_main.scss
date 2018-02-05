@@ -110,7 +110,7 @@ main {
     top: 90px;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
     align-items: center;
@@ -123,24 +123,23 @@ main {
 }
 
 figure {
-  width: 80%;
-  margin: 0 10%;
   position: relative;
-  margin-bottom: 45px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
   @include box-shadow;
   cursor: pointer;
-  @media (min-width: 768px) {
-    margin-bottom: 50px;
+  @media (min-width: 560px) {
+    width: 44%;
+    margin: 0 2%;
+    margin-bottom: 30px;
   }
   @media (min-width: 960px) {
+    margin: 0 0 0 6%;
     margin-bottom: 60px;
   }
   @media (min-width: 1280px) {
     max-width: 960px;
-    margin-bottom: 75px;
-  }
-  @media (min-width: 1440px) {
-    margin-bottom: 90px;
   }
   .loading {
     opacity: 0;
@@ -157,6 +156,11 @@ img.figure-image {
 }
 
 figcaption.figure-caption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,6 +168,7 @@ figcaption.figure-caption {
   transition-timing-function: linear;
   margin: 0 auto;
   padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
   @media (min-width: 1280px) {
     max-width: 960px;
     padding: 25px;
@@ -176,8 +181,9 @@ figcaption.figure-caption {
     font-family: $font-serif;
     font-size: 22px;
     font-weight: 700;
-    color: $color-faux-black;
+    color: $color-faux-white;
     margin-bottom: 0.325rem;
+    text-align: center;
     @media (min-width: 450px) {
       font-size: 26px;
     }
@@ -198,7 +204,8 @@ figcaption.figure-caption {
   h3.figure-subtitle {
     font-family: $font-sans;
     font-size: 14px;
-    color: $color-faux-black;
+    color: $color-faux-white;
+    text-align: center;
     @media (min-width: 450px) {
       font-size: 16px;
     }
