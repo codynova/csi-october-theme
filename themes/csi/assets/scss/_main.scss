@@ -111,7 +111,7 @@ main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
     @media (min-width: 960px) {
@@ -164,11 +164,18 @@ figcaption.figure-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: opacity 0.325s;
-  transition-timing-function: linear;
+  transition: opacity 325ms $transition-cubic-bezier, background 325ms $transition-cubic-bezier;
   margin: 0 auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.2);
+  &:hover {
+    h4.figure-link {
+      opacity: 1;
+      &:after {
+        transform: translateX(3px);
+      }
+    }
+  }
   @media (min-width: 1280px) {
     max-width: 960px;
     padding: 25px;
@@ -220,6 +227,31 @@ figcaption.figure-caption {
     }
     @media (min-width: 1440px) {
       font-size: 24px;
+    }
+  }
+  h4.figure-link {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    font-family: $font-sans;
+    font-size: 14px;
+    color: $color-faux-white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 325ms;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+    &:after {
+      content: '\2192';
+      display: inline-block;
+      position: relative;
+      width: auto;
+      padding-left: 0.3rem;
+      top: 0;
+      right: 0;
+      left: 6px;
+      transition: opacity 325ms ease, transform 325ms ease;
     }
   }
 }
