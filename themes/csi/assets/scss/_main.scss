@@ -36,7 +36,6 @@ nav.filter {
       font-family: $font-sans;
       font-size: 13px;
       color: $color-white;
-      transition: text-shadow 200ms ease-in, border 200ms linear;
       text-transform: uppercase;
       cursor: pointer;
       flex-grow: 1;
@@ -58,9 +57,9 @@ nav.filter {
       }
       h3 {
         background-color: $color-dark-purple2;
-        text-transform: none;
         cursor: default;
         font-size: 16px;
+        text-transform: none;
         @media (min-width: 960px) {
           font-size: 18px;
         }
@@ -125,12 +124,18 @@ main {
 figure {
   position: relative;
   width: 80%;
+  max-width: 520px;
   margin: 0 auto;
   margin-bottom: 30px;
   @include box-shadow;
   cursor: pointer;
-  @media (min-width: 560px) {
+  transition: transform 325ms ease, box-shadow 325ms ease;
+  &:hover, &:active {
+    transform: translateY(-2px);
+  }
+  @media (min-width: 768px) {
     width: 44%;
+    max-width: none;
     margin: 0 2%;
     margin-bottom: 30px;
   }
@@ -164,11 +169,11 @@ figcaption.figure-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: opacity 325ms $transition-cubic-bezier, background 325ms $transition-cubic-bezier;
+  transition: opacity 325ms ease, background 325ms ease;
   margin: 0 auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.2);
-  &:hover {
+  &:hover, &:active {
     h4.figure-link {
       opacity: 1;
       &:after {
@@ -191,6 +196,7 @@ figcaption.figure-caption {
     color: $color-faux-white;
     margin-bottom: 0.325rem;
     text-align: center;
+    text-shadow: $shadow-text;
     @media (min-width: 450px) {
       font-size: 26px;
     }
@@ -213,6 +219,7 @@ figcaption.figure-caption {
     font-size: 14px;
     color: $color-faux-white;
     text-align: center;
+    text-shadow: $shadow-text;
     @media (min-width: 450px) {
       font-size: 16px;
     }
@@ -242,6 +249,7 @@ figcaption.figure-caption {
     transition: opacity 325ms;
     text-transform: uppercase;
     letter-spacing: -0.05rem;
+    text-shadow: $shadow-text;
     &:after {
       content: '\2192';
       display: inline-block;
