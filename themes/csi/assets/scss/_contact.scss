@@ -1,5 +1,75 @@
 .content.contact-page {
     top: 80px;
+    padding: 0 15px 0 15px;
+    @media (min-width: 420px) {
+      padding: 0 20px 0 20px;
+    }
+    @media (min-width: 520px) {
+      padding: 0 25px 0 25px;
+    }
+    @media (min-width: 768px) {
+      padding: 0 30px 0 30px;
+    }
+    @media (min-width: 960px) {
+      padding: 0 45px 0 45px;
+    }
+    h3 {
+      color: $color-white;
+      font-family: $font-sans;
+      font-weight: 700;
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      @media (min-width: 330px) {
+        font-size: 28px;
+      }
+      @media (min-width: 420px) {
+        font-size: 32px;
+      }
+      @media (min-width: 520px) {
+        font-size: 36px;
+      }
+      @media (min-width: 620px) {
+        font-size: 40px;
+      }
+      @media (min-width: 768px) {
+        @media (min-height: 450px) {
+          font-size: 47px;
+        }
+      }
+      @media (min-width: 960px) {
+        @media (min-height: 450px) {
+          font-size: 53px;
+        }
+      }
+      @media (min-width: 1280px) {
+        @media (min-height: 560px) {
+          font-size: 63px;
+        }
+      }
+    }
+    .contact-welcome {
+      color: $color-faded-white;
+      font-family: $font-sans;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 50px;
+      line-height: 18px;
+      margin-bottom: 20px;
+      @media (min-width: 620px) {
+        font-size: 18px;
+      }
+      @media (min-width: 768px) {
+        font-size: 20px;
+        padding-right: 100px;
+      }
+      @media (min-width: 960px) {
+        font-size: 22px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 23px;
+      }
+    }
     form.form-contact {
       width: 98%;
       min-width: 280px;
@@ -8,14 +78,14 @@
       input, textarea {
         margin: 0.725rem auto;
         background: $color-faux-white;
-        padding: 0.5rem;
+        padding: 0.725rem;
         border: none;
         float: left;
         clear: both;
         box-sizing: border-box;
         transition: color 300ms ease, border 300ms linear;
-        font-family: $font-serif;
-        font-size: 18px;
+        font-family: $font-sans;
+        font-size: 17px;
         @include box-shadow;
       }
       input[name=username], input[name=useremail], input[name=userphone] {
