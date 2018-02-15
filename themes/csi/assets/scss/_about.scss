@@ -81,4 +81,26 @@
       }
     }
   }
+  .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    .card {
+      background: $color-faux-white;
+      width: 28%;
+      max-width: 280px;
+      height: 380px;
+      border-radius: 2px;
+      box-shadow: $shadow-default;
+      h4 {
+        color: $color-faux-black;
+        font-size: 16px;
+        font-family: $font-sans;
+        text-align: center;
+        padding: 1.5rem 0.75rem;
+      }
+    }
+  }
 }

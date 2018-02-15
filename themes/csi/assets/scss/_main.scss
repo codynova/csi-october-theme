@@ -147,7 +147,6 @@ figure {
   @media (min-width: 768px) {
     width: 44%;
     max-width: none;
-    margin: 0 2%;
     margin-bottom: 30px;
   }
   @media (min-width: 960px) {
@@ -166,6 +165,7 @@ img.figure-image {
   width: 100%;
   display: block;
   margin: 0 auto;
+  border-radius: 2px;
   @media (min-width: 1280px) {
     max-width: 960px;
   }
@@ -184,6 +184,7 @@ figcaption.figure-caption {
   margin: 0 auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
   &:hover, &:active {
     h4.figure-link {
       opacity: 1;

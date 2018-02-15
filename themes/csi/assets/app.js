@@ -152,12 +152,12 @@ app.service('styleService', [
     '$document',
     'BACKGROUND_VALUES',
     function($document, BACKGROUND_VALUES) {
-        this.contactPage = function() {
+        this.purpleBodyBackground = function() {
             var documentBody = document.querySelector('body');
             documentBody.style.background = BACKGROUND_VALUES.black;
             documentBody.style.backgroundImage = BACKGROUND_VALUES.purpleStaticGradient;
         },
-        this.homePage = function() {
+        this.whiteBodyBackground = function() {
             var documentBody = document.querySelector('body');
             documentBody.style.background = BACKGROUND_VALUES.fauxWhite;
             documentBody.style.backgroundImage = 'none';
@@ -205,16 +205,17 @@ app.controller('primaryController', [
         
         $scope.scrollToWork = function() {
             scrollService.scrollToWork($scope);
-            styleService.homePage();
+            styleService.whiteBodyBackground();
         };
 
         $scope.openAboutPage = function() {
+            styleService.purpleBodyBackground();
             scrollService.scrollToTop();
             $location.path('/about');
         };
         
         $scope.openContactPage = function() {
-            styleService.contactPage();
+            styleService.purpleBodyBackground();
             scrollService.scrollToTop();
             $location.path('/contact');
         };
