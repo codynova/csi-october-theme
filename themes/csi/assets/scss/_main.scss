@@ -55,6 +55,9 @@ nav.filter {
       &:hover {
         background-color: $color-dark-purple4;
       }
+      &:first-of-type:hover {
+        background-color: inherit;
+      }
       h3 {
         background-color: $color-dark-purple2;
         cursor: default;
@@ -125,7 +128,7 @@ main {
 
 figure {
   position: relative;
-  width: 80%;
+  width: 90%;
   max-width: 520px;
   margin: 0 auto;
   margin-bottom: 30px;
@@ -134,6 +137,12 @@ figure {
   transition: transform 325ms ease, box-shadow 325ms ease;
   &:hover, &:active {
     transform: translateY(-2px);
+  }
+  @media (min-width: 520px) {
+    width: 85%;
+  }
+  @media (min-width: 620px) {
+    width: 80%;
   }
   @media (min-width: 768px) {
     width: 44%;

@@ -94,10 +94,18 @@
         float: left;
         clear: both;
         box-sizing: border-box;
-        transition: color 300ms ease, border 300ms linear;
+        transition: transform 325ms ease, box-shadow 325ms ease;
         font-family: $font-sans;
         font-size: 13px;
-        @include box-shadow;
+        color: $color-dark-purple2;
+        caret-color: $color-brand;
+        &:hover {
+          box-shadow: $shadow-default;
+        }
+        &:focus {
+          box-shadow: $shadow-default;
+          transform: translateY(-1px);
+        }
         @media (min-width: 768px) {
           margin: 0.625rem auto;
           padding: 0.625rem;
@@ -151,17 +159,13 @@
             margin-right: 4rem;
           }
           &[type=submit] {
-            background: $color-confirm-hover;
+            background: $color-dark-purple2;
             color: $color-faux-white;
             opacity: 1;
           }
           &[type=reset] {
-            background: $color-deny;
-            color: $color-faux-white;
-            &:hover {
-              background: $color-deny-hover;
-              opacity: 1;
-            }
+            background: $color-faux-white;
+            color: $color-dark-purple2;
           }
         }
       }
