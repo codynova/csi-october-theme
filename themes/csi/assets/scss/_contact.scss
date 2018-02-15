@@ -18,8 +18,8 @@
       font-family: $font-sans;
       font-weight: 700;
       font-size: 24px;
-      margin-top: 60px;
-      margin-bottom: 20px;
+      margin-top: 0;
+      margin-bottom: 10px;
       @media (min-width: 330px) {
         font-size: 28px;
       }
@@ -30,6 +30,8 @@
         font-size: 36px;
       }
       @media (min-width: 620px) {
+        margin-top: 10px;
+        margin-bottom: 15px;
         font-size: 40px;
       }
       @media (min-width: 768px) {
@@ -38,11 +40,13 @@
         }
       }
       @media (min-width: 960px) {
+        margin-top: 45px;
         @media (min-height: 450px) {
           font-size: 53px;
         }
       }
       @media (min-width: 1280px) {
+        margin-top: 60px;
         @media (min-height: 560px) {
           font-size: 63px;
         }
@@ -53,8 +57,7 @@
       font-family: $font-sans;
       font-size: 17px;
       font-weight: 600;
-      line-height: 50px;
-      line-height: 18px;
+      line-height: 110%;
       margin-bottom: 20px;
       @media (min-width: 620px) {
         font-size: 18px;
@@ -65,9 +68,17 @@
       }
       @media (min-width: 960px) {
         font-size: 22px;
+        margin-bottom: 30px;
       }
       @media (min-width: 1280px) {
         font-size: 23px;
+        margin-bottom: 45px;
+      }
+      .break-1120-min {
+        display: none;
+        @media (min-width: 1120px) {
+          display: block;
+        }
       }
     }
     form.form-contact {
@@ -76,17 +87,27 @@
       max-width: 800px;
       margin: 0 auto;
       input, textarea {
-        margin: 0.725rem auto;
+        margin: 0.5rem auto;
         background: $color-faux-white;
-        padding: 0.725rem;
+        padding: 0.5rem;
         border: none;
         float: left;
         clear: both;
         box-sizing: border-box;
         transition: color 300ms ease, border 300ms linear;
         font-family: $font-sans;
-        font-size: 17px;
+        font-size: 13px;
         @include box-shadow;
+        @media (min-width: 768px) {
+          margin: 0.625rem auto;
+          padding: 0.625rem;
+          font-size: 15px;
+        }
+        @media (min-width: 960px) {
+          margin: 0.725rem auto;
+          padding: 0.725rem;
+          font-size: 17px;
+        }
       }
       input[name=username], input[name=useremail], input[name=userphone] {
         width: 80%;
@@ -99,7 +120,13 @@
       }
       textarea[name=usermessage] {
         width: 100%;
-        height: 220px;
+        height: 160px;
+        @media (min-width: 768px) {
+          height: 180px;
+        }
+        @media (min-width: 960px) {
+          height: 200px;
+        }
       }
       div {
         width: 100%;
@@ -108,6 +135,7 @@
         clear: right;
         text-align: center;
         margin-top: 1rem;
+        margin-bottom: 2rem;
         button {
           width: auto;
           margin: 0 auto;

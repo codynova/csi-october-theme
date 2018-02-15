@@ -2,7 +2,14 @@
 
 var app = angular.module('csiApp', ['ngRoute', 'ngAnimate', 'ngSanitize']);
 
-app.constant('WORK_LOAD_VALUES', { increment: 3, interval: 1000 });
+app.constant('WORK_LOAD_VALUES', { 
+    increment: 3, 
+    interval: 1000 
+}).constant('BACKGROUND_VALUES', {
+    fauxWhite: '#fafafa',
+    black: '#000',
+    purpleStaticGradient: 'url(\'../images/static-overlay.png\'), linear-gradient(to right, rgba(136,81,253,0.99) 3%, rgba(136,81,253,0.9) 8%, rgba(136,81,253,0.8) 20%, rgba(136,81,253,0.6) 60%, rgba(136,81,253,0.7) 75%, rgba(136,81,253,0.8) 85%, rgba(136,81,253,0.9) 97%, rgba(136,81,253,0.99) 100%)'
+});
 
 app.run(['$rootScope', '$location',
     function ($rootScope, $location) {
@@ -141,8 +148,25 @@ app.service('scrollService', [
     }
 ]);
 
+app.service('styleService', [
+    '$document',
+    'BACKGROUND_VALUES',
+    function($document, BACKGROUND_VALUES) {
+        this.contactPage = function() {
+            var documentBody = document.querySelector('body');
+            documentBody.style.background = BACKGROUND_VALUES.black;
+            documentBody.style.backgroundImage = BACKGROUND_VALUES.purpleStaticGradient;
+        },
+        this.homePage = function() {
+            var documentBody = document.querySelector('body');
+            documentBody.style.background = BACKGROUND_VALUES.fauxWhite;
+            documentBody.style.backgroundImage = 'none';
+        }
+    }
+]);
+
 app.service('mobileMenuService', function() {
-    this.animateHamburger = function () {
+    this.animateHamburger = function() {
         var menu = document.querySelector('.hamburger');
         var iconElements = document.querySelectorAll('.hamburger span');
         menu.addEventListener('click', function() {
@@ -155,9 +179,8 @@ app.service('mobileMenuService', function() {
 });
 
 app.controller('primaryController', [
-    '$scope', '$document', '$location', '$routeParams', 'dataService', 'scrollService',
-    function ($scope, $document, $location, $routeParams, dataService, scrollService) {
-        
+    '$scope', '$document', '$location', '$routeParams', 'dataService', 'scrollService', 'styleService',
+    function ($scope, $document, $location, $routeParams, dataService, scrollService, styleService) {
         // Navigation variables
         $scope.showNavCategories = true;
         $scope.filterQuery = '';
@@ -182,6 +205,7 @@ app.controller('primaryController', [
         
         $scope.scrollToWork = function() {
             scrollService.scrollToWork($scope);
+            styleService.homePage();
         };
 
         $scope.openAboutPage = function() {
@@ -190,6 +214,7 @@ app.controller('primaryController', [
         };
         
         $scope.openContactPage = function() {
+            styleService.contactPage();
             scrollService.scrollToTop();
             $location.path('/contact');
         };

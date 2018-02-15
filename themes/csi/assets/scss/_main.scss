@@ -106,7 +106,7 @@ main {
   }
   section {
     position: relative;
-    top: 90px;
+    margin-top: 90px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -114,6 +114,8 @@ main {
     align-content: flex-start;
     align-items: center;
     @media (min-width: 960px) {
+      top: 90px;
+      margin-top: 0;
       width: 85%;
       max-width: calc(100% - 100px);
       min-height: 720px;
