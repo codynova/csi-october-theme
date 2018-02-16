@@ -11,6 +11,7 @@ $color-deny: #ff5436;
 $color-deny-hover: #fd4626;
 
 $color-brand: #8851fd;
+$color-brand-darker: #5c3ba3;
 $color-brand-rgb: rgb(136,81,253);
 $color-dark-purple: rgba(63, 34, 125, 1);
 $color-dark-purple2: rgba(63, 34, 125, 0.8);
@@ -23,6 +24,7 @@ $background-hero-gradient: linear-gradient(to right, rgba(136,81,253,0.99) 3%, r
 $font-sans: 'Work Sans';
 //$font-sans: 'PT Sans';
 $font-serif: 'Spectral';
+$font-icons: 'Icons' !important;
 
 @mixin font-body {
   font-family: $font-sans;

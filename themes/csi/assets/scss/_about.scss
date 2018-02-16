@@ -83,23 +83,82 @@
   }
   .card-container {
     width: 100%;
+    max-width: 1000px;
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      margin-top: 4rem;
+    }
     .card {
       background: $color-faux-white;
-      width: 28%;
+      width: 80%;
       max-width: 280px;
-      height: 380px;
+      height: 360px;
       border-radius: 2px;
       box-shadow: $shadow-default;
-      h4 {
-        color: $color-faux-black;
-        font-size: 16px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+      &:first-of-type {
+        margin-top: 2rem;
+      }
+      @media (min-width: 320px) {
+        height: 350px;
+        max-width: 236px;
+      }
+      @media (min-width: 768px) {
+        width: 31%;
+        margin: 0;
+        &:first-of-type {
+          margin: 0;
+        }
+      }
+      @media (min-width: 2400px) {
+        height: 400px;
+        max-width: 280px;
+      }
+      .icon {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 60px;
+        text-align: center;
+        padding: 2.5rem 0 0.75rem 0;
+        color: $color-brand;
+        @media (min-width: 320px) {
+          padding: 2.5rem 0 0.75rem 0;
+        }
+        @media (min-width: 2400px) {
+          font-size: 88px;
+        }
+      }
+      h4.card-title {
+        font-size: 20px;
+        font-weight: 600;
         font-family: $font-sans;
         text-align: center;
-        padding: 1.5rem 0.75rem;
+        padding: 0.75rem 0.75rem 0 0.75rem;
+        color: $color-brand-darker;
+        @media (min-width: 320px) {
+          padding: 0.75rem 0.75rem 0 0.75rem;
+        }
+        @media (min-width: 2400px) {
+          font-size: 26px;
+        }
+      }
+      p.card-description {
+        font-family: $font-sans;
+        padding: 2rem;
+        line-height: 1.5rem;
+        text-align: center;
+        color: $color-faux-black;
+        @media (min-width: 2400px) {
+          font-size: 20px;
+        }
       }
     }
   }

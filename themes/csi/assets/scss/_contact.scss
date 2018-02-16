@@ -96,7 +96,7 @@
         box-sizing: border-box;
         transition: transform 325ms ease, box-shadow 325ms ease;
         font-family: $font-sans;
-        font-size: 13px;
+        font-size: 15px;
         color: $color-dark-purple2;
         caret-color: $color-brand;
         &:hover {
@@ -172,10 +172,24 @@
             background: $color-dark-purple2;
             color: $color-faux-white;
             opacity: 1;
+            &:after {
+              content: '\e900';
+              font-family: $font-icons;
+              position: relative;
+              left: 8px;
+              top: 1px;
+            }
           }
           &[type=reset] {
             background: $color-faux-white;
             color: $color-dark-purple2;
+            &:after {
+              content: '\e901';
+              font-family: $font-icons;
+              position: relative;
+              left: 8px;
+              top: 1px;
+            }
           }
         }
       }
