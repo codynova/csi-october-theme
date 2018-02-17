@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Icons';
-    src:  url('../fonts/icons.eot?oi9ny1');
-    src:  url('../fonts/icons.eot?oi9ny1#iefix') format('embedded-opentype'),
-        url('../fonts/icons.ttf?oi9ny1') format('truetype'),
-        url('../fonts/icons.woff?oi9ny1') format('woff'),
-        url('../fonts/icons.svg?oi9ny1#icons') format('svg');
+    src:  url('../fonts/icons.eot?yi0688');
+    src:  url('../fonts/icons.eot?yi0688#iefix') format('embedded-opentype'),
+        url('../fonts/icons.ttf?yi0688') format('truetype'),
+        url('../fonts/icons.woff?yi0688') format('woff'),
+        url('../fonts/icons.svg?yi0688#icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,8 +21,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-send:before {
+.icon-clipboard:before {
     content: "\e900";
+}
+.icon-email:before {
+    content: "\e905";
+}
+.icon-forklift:before {
+    content: "\e906";
 }
 .icon-cancel:before {
     content: "\e901";
