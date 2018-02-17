@@ -116,6 +116,11 @@
           padding: 0.725rem;
           font-size: 17px;
         }
+        @media (min-width: 2400px) {
+          margin: 0.925rem auto;
+          padding: 0.925rem;
+          font-size: 20px;
+        }
       }
       input[name=username], input[name=useremail], input[name=userphone] {
         width: 80%;
@@ -160,6 +165,9 @@
           }
           @media (min-width: 960px) {
             font-size: 16px;
+          }
+          @media (min-width: 2400px) {
+            font-size: 19px;
           }
           &:first-of-type {
             margin-right: 4rem;
