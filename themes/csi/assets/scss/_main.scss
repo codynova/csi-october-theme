@@ -294,21 +294,24 @@ figcaption.figure-caption {
   }
 }
 
-.ng-enter {
-  opacity: 0;
-  transition: opacity 600ms ease;
-  transition-delay: 600ms;
-}
-.ng-enter-prepare {
-  opacity: 0;  
-}
-.ng-enter-active {
-  opacity: 1;
-}
-.ng-leave {
-  opacity: 1;
-  transition: opacity 600ms ease;
-}
-.ng-leave-active {
-  opacity: 0;
+// Add animations for all browsers except Edge
+@supports not (-ms-ime-align: auto) {
+  .ng-enter {
+    opacity: 0;
+    transition: opacity 600ms ease;
+    transition-delay: 600ms;
+  }
+  .ng-enter-prepare {
+    opacity: 0;  
+  }
+  .ng-enter-active {
+    opacity: 1;
+  }
+  .ng-leave {
+    opacity: 1;
+    transition: opacity 600ms ease;
+  }
+  .ng-leave-active {
+    opacity: 0;
+  }
 }
