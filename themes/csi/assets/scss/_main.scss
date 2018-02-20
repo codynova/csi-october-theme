@@ -135,6 +135,7 @@ figure {
   @include box-shadow;
   cursor: pointer;
   transition: transform 325ms ease, box-shadow 325ms ease;
+  border-radius: 2px;
   &:hover, &:active {
     transform: translateY(-2px);
   }
