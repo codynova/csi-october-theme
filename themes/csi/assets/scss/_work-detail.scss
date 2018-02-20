@@ -39,6 +39,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      .work-back {
+        color: $color-white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 14px;
+        padding: 1rem;
+        font-family: $font-sans;
+        @media (min-width: 768px) {
+          font-size: 15px;
+        }
+        @media (min-width: 960px) {
+          font-size: 16px;
+          padding: 1.5rem;
+        }
+        @media (min-width: 2400px) {
+          font-size: 19px;
+        }
+        &:before {
+          content: '\e902';
+          font-family: $font-icons;
+          position: relative;
+          right: 4px;
+          top: 1px;
+        }
+      }
       h3 {
         color: $color-white;
         font-family: $font-serif;
