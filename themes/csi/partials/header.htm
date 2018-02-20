@@ -3,13 +3,13 @@
     <ul>
         <li>
             <!--<a href="/" class="fade-content fade-content-work" ng-class="{'active': isActiveTab('/')}">Our Work</a>-->
-            <a href="#" ng-click="scrollToWork();">Our Work</a>
+            <a href="#" ng-click="scrollToWork();">{% content 'nav/work-link-text.txt' %}</a>
         </li>
         <li>
-            <a href="#" ng-click="openAboutPage();" ng-class="{active: isActiveTab('/about')}">About Us</a>
+            <a href="#" ng-click="openAboutPage();" ng-class="{active: isActiveTab('/about')}">{% content 'nav/about-link-text.txt' %}</a>
         </li>
         <li>
-            <a href="#" ng-click="openContactPage();" ng-class="{active: isActiveTab('/contact')}">Contact</a>
+            <a href="#" ng-click="openContactPage();" ng-class="{active: isActiveTab('/contact')}">{% content 'nav/contact-link-text.txt' %}</a>
         </li>
     </ul>
 </nav>

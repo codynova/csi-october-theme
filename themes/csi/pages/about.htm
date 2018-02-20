@@ -3,36 +3,35 @@ url = "/about.html"
 is_hidden = 0
 ==
 <div class="content about-page">
-	<h3>About us</h3>
+	<h3>{% content 'about/page-title-text.txt' %}</h3>
 	<p class="about-welcome">
-		Center Stage Industries offers concert, festival, and corporate event production<br class="break-1120-min"/>
-		based out of Seattle, Washington.
+	    {% content 'about/page-subtitle-content.htm' %}
 	</p>
 	<div class="card-container">
 		<div class="card">
 			<span class="icon icon-spotlight"></span>
-			<h4 class="card-title">Event Production</h4>
-			<p class="card-description">Lights, camera, action! We handle the technical stuff, so you can enjoy the show.</p>
+			<h4 class="card-title">{% content 'about/card-1-title.txt' %}</h4>
+			<p class="card-description">{% content 'about/card-1-text.txt' %}</p>
 		</div>
 		<div class="card">
 			<span class="icon icon-bus"></span>
-			<h4 class="card-title">Tour Management</h4>
-			<p class="card-description">Relax on the road while we handle tour transportation, scheduling, and finances.</p>
+			<h4 class="card-title">{% content 'about/card-2-title.txt' %}</h4>
+			<p class="card-description">{% content 'about/card-2-text.txt' %}</p>
 		</div>
 		<div class="card">
 			<span class="icon icon-compass"></span>
-			<h4 class="card-title">Drafting Services</h4>
-			<p class="card-description">Plan the perfect event with location modeling tools like SketchUp and AutoCAD.</p>
+			<h4 class="card-title">{% content 'about/card-3-title.txt' %}</h4>
+			<p class="card-description">{% content 'about/card-3-text.txt' %}</p>
 		</div>
 		<div class="card">
 			<span class="icon icon-clipboard"></span>
-			<h4 class="card-title">Stage Management</h4>
-			<p class="card-description">We'll make sure the show runs smoothly to provide an event you'll remember.</p>
+			<h4 class="card-title">{% content 'about/card-4-title.txt' %}</h4>
+			<p class="card-description">{% content 'about/card-4-text.txt' %}</p>
 		</div>
 		<div class="card">
 			<span class="icon icon-forklift"></span>
-			<h4 class="card-title">Production Labor</h4>
-			<p class="card-description">Let us do the heavy lifting. Trust us, your back will thank you.</p>
+			<h4 class="card-title">{% content 'about/card-5-title.txt' %}</h4>
+			<p class="card-description">{% content 'about/card-5-text.txt' %}</p>
 		</div>
 	</div>
 </div>

@@ -5,20 +5,20 @@ is_hidden = 0
 <div class="content">
     <span class="logo"></span>
     <div class="intro">
-        <h2>When you're ready for <br><span class="purple">a different breed of event.</span></h2>
+        <h2>{% content 'home/intro-white-text.txt' %}<br><span class="purple">{% content 'home/intro-purple-text.txt' %}</span></h2>
         <!--<p>Center Stage Industries is a full service event production company based in Seattle. We collaborate with teams from around the world to offer top notch concert, festival, and corporate event production services.</p>-->
     </div>
     <div class="see-work">
-        <span><a href="#" ng-click="scrollToWork();">See our work</a></span>
+        <span><a href="#" ng-click="scrollToWork();">{% content 'home/work-link-text.txt' %}</a></span>
     </div>
     <div class="cta">
-        <span><a href="#" class="fade-content fade-content-contact" ng-click="openContactPage();">Get in touch</a></span>
+        <span><a href="#" class="fade-content fade-content-contact" ng-click="openContactPage();">{% content 'home/contact-link-text.txt' %}</a></span>
     </div>
 </div>
 
 <nav class="filter">
 	<ul>
-	    <li><h3>Filter&hairsp;:</h3></li>
+	    <li><h3>{% content 'home/filter-title-text.txt' %}&hairsp;:</h3></li>
 		<li ng-repeat="category in navCategories | orderBy: 'order' track by category.id" ng-click="$parent.filterQuery = category.matchvalue" ng-class="{active: category.matchvalue === $parent.filterQuery}"><a href="#">{[{category.label}]}</a></li>
 	</ul>
 </nav>
@@ -29,7 +29,7 @@ is_hidden = 0
         <figcaption class="figure-caption">
             <h2 class="figure-title" ng-bind="work.title"></h2>
             <h3 class="figure-subtitle" ng-bind="work.subtitle"></h3>
-            <h4 class="figure-link">See More</h4>
+            <h4 class="figure-link">{% content 'home/gallery-link-text.txt' %}</h4>
         </figcaption>
     </figure>
 </section>
