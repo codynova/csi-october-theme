@@ -1,0 +1,6 @@
+plugin:
+    name: 'csi.mail::lang.plugin.name'
+    description: 'csi.mail::lang.plugin.description'
+    author: CSI
+    icon: oc-icon-envelope-o
+    homepage: ''

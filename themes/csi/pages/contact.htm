@@ -1,21 +1,13 @@
 title = "Contact"
 url = "/contact.html"
 is_hidden = 0
+
+[contactform]
 ==
 <div class="content contact-page">
 	<h3>{% content 'contact/page-title-text.txt' %}</h3>
 	<p class="contact-welcome">
 		{% content 'contact/page-subtitle-content.htm' %}
 	</p>
-    <form class="form-contact" action="themes/csi/assets/scripts/contact.php" method="POST">
-    	<input type="text" name="username" required="required" placeholder="{% content 'contact/name-placeholder-text.txt' %}">
-    	<input type="email" name="useremail" required="required" placeholder="{% content 'contact/email-placeholder-text.txt' %}">
-    	<input type="tel" name="userphone" required="required" placeholder="{% content 'contact/phone-placeholder-text.txt' %}">
-    	<input type="text" name="usersubject" required="required" placeholder="{% content 'contact/subject-placeholder-text.txt' %}">
-    	<textarea name="usermessage" placeholder="{% content 'contact/message-placeholder-text.txt' %}" required="required"></textarea>
-    	<div>
-    		<button type="submit">{% content 'contact/submit-button-text.txt' %}</button>
-    		<button type="reset">{% content 'contact/reset-button-text.txt' %}</button>
-    	</div>
-    </form>
+    {% component 'contactform' %}
 </div>

@@ -1,0 +1,11 @@
+<form class="form-contact" data-request="onSend">
+    <input type="text" name="username" required="required" placeholder="{% content 'contact/name-placeholder-text.txt' %}">
+    <input type="email" name="useremail" required="required" placeholder="{% content 'contact/email-placeholder-text.txt' %}">
+    <input type="tel" name="userphone" required="required" placeholder="{% content 'contact/phone-placeholder-text.txt' %}">
+    <input type="text" name="usersubject" required="required" placeholder="{% content 'contact/subject-placeholder-text.txt' %}">
+    <textarea name="usermessage" placeholder="{% content 'contact/message-placeholder-text.txt' %}" required="required"></textarea>
+    <div>
+        <button type="submit">{% content 'contact/submit-button-text.txt' %}</button>
+        <button type="reset">{% content 'contact/reset-button-text.txt' %}</button>
+    </div>
+</form>
